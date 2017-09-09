@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Auth\Notifications;
+namespace App\Notifications;
 
 use App\Mails\ResetPassword as ResetPasswordMessage;
 use Illuminate\Bus\Queueable;
@@ -49,6 +49,6 @@ class ResetPassword extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        return new ResetPasswordMessage($notifiable, $token);
+        return new ResetPasswordMessage($notifiable, $this->token);
     }
 }
